@@ -1,12 +1,13 @@
 import { useState } from 'react';
-import { FlatList, StyleSheet, View, Text } from 'react-native';
+import { FlatList, StyleSheet, View } from 'react-native';
+
 import Division from '@/components/Division';
-import FriendSection from '@/components/FriendSection';
-import Header from '@/components/FriendHeader';
 import Margin from '@/components/Margin';
-import Profile from '@/components/Profile';
-import TabBar from '@/components/TabBar';
-import { myProfile, friendProfiles } from '@/assets/data/mockFriendsData';
+import FriendSection from '@/components/friends/FriendSection';
+import Header from '@/components/friends/FriendHeader';
+import Profile from '@/components/friends/Profile';
+import TabBar from '@/components/friends/TabBar';
+import { myProfile, friendProfiles } from '@/assets/data/mock-friends-data';
 
 export default function FriendsScreen() {
   const [isOpened, setIsOpened] = useState(true);

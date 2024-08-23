@@ -28,7 +28,11 @@
     },
     "plugins": [
       "expo-router",
-      "expo-font"
+      [
+        "expo-font", {
+          "fonts": ["./assets/fonts/Inter-Black.otf", "./assets/fonts/RIDIBatang.otf"]
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true

@@ -1,5 +1,5 @@
-import { Image, SafeAreaView, StyleSheet, Text, View } from 'react-native';
-import Calculator from '@/components/Calculator';
+import { SafeAreaView, StyleSheet, Text } from 'react-native';
+import Calculator from '@/components/calc/Calculator';
 
 export default function CalcScreen() {
   return (

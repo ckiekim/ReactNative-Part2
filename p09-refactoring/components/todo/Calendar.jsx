@@ -3,7 +3,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import dayjs from 'dayjs';
 
 import CalendarColumn from './CalendarColumn';
-import Margin from './Margin';
+import Margin from '../Margin';
 import { getCalendarColumns } from '@/utils/calendar-util';
 
 const dayColors = ['#e67639', '#2b2b2b', '#2b2b2b', '#2b2b2b', '#2b2b2b', '#2b2b2b', '#5872d1'];

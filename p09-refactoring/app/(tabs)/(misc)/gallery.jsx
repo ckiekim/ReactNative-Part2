@@ -1,10 +1,9 @@
-import { useEffect } from 'react';
-import { Alert, Platform, SafeAreaView, StyleSheet, } from 'react-native';
+import { Alert, SafeAreaView, StyleSheet, } from 'react-native';
 
-import BigImageModal from '@/components/BigImageModal';
-import ImageList from '@/components/ImageList';
-import MyDropDownPicker from '@/components/MyDropDownPicker';
-import TextInputModal from '@/components/TextInputModal';
+import BigImageModal from '@/components/gallery/BigImageModal';
+import ImageList from '@/components/gallery/ImageList';
+import MyDropDownPicker from '@/components/gallery/MyDropDownPicker';
+import TextInputModal from '@/components/gallery/TextInputModal';
 import useGallery from '@/hooks/use-gallery';
 
 export default function GalleryScreen() {
@@ -77,7 +76,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    // marginTop: Platform.OS === 'android' ? 20 : 0,
     // alignItems: 'center',
     // justifyContent: 'center',
   },

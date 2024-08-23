@@ -3,12 +3,12 @@ import { Alert, Keyboard, KeyboardAvoidingView, FlatList, Image, Pressable, Styl
 import DateTimePickerModal from 'react-native-modal-datetime-picker';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
+import Margin from '@/components/Margin';
+import AddTodoInput from '@/components/todo/AddTodoInput';
+import Calendar from '@/components/todo/Calendar';
 import useCalendar from '@/hooks/use-calendar';
 import useTodoList from '@/hooks/use-todo-list';
-import AddTodoInput from '@/components/AddTodoInput';
-import Calendar from '@/components/Calendar';
-import Margin from '@/components/Margin';
-import { statusBarHeight, bottomSpace, ITEM_WIDTH } from '@/constants/size';
+import { statusBarHeight, bottomSpace, ITEM_WIDTH } from '@/constants/todo-size';
 
 export default function MiscScreen() {
   const {

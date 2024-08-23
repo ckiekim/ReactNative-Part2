@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { TouchableOpacity } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { COLOR } from '../constants/bus-color';
+import { COLOR } from '@/constants/bus-color';
 
 export default function BookmarkButton({ 
   isBookmarked: isBookmarkedFromProp, onPressBookmark, size, style, NEW_COLOR,

@@ -1,7 +1,7 @@
 import { TextInput, TouchableOpacity, View } from 'react-native';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import dayjs from 'dayjs';
-import { bottomSpace, ITEM_WIDTH } from '@/constants/size';
+import { bottomSpace, ITEM_WIDTH } from '@/constants/todo-size';
  
 export default function AddTodoInput({ input, setInput, selectedDate, onPress, onFocus }) {
   return (

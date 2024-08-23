@@ -2,7 +2,7 @@ import { Text, View } from 'react-native';
 
 import AlarmButton from './AlarmButton';
 import BookmarkButton from './BookmarkButton';
-import Margin from './Margin';
+import Margin from '../Margin';
 import NextBusInfo from './NextBusInfo';
 
 export default function BusInfo({

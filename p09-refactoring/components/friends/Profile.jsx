@@ -1,6 +1,6 @@
 import { Image, View, Text } from 'react-native';
 import styled from 'styled-components/native';
-import Margin from './Margin';
+import Margin from '../Margin';
 
 const Container = styled.View`
   flex-direction: row; align-items: center

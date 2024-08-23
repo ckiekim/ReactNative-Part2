@@ -1,4 +1,5 @@
 import { Link, Stack } from 'expo-router';
+import { Text } from 'react-native';
 import AntDesign from '@expo/vector-icons/AntDesign';
 
 export default function MiscLayout() {
@@ -19,7 +20,11 @@ export default function MiscLayout() {
       />
       <Stack.Screen 
         name="gallery" 
-        options={{ title: 'Gallery App', }} 
+        options={{ 
+          headerTitle: () => (
+            <Text style={{ fontSize: 20, fontWeight: 500, marginLeft: -20 }}>Gallery App</Text>
+          ),
+        }} 
       />
     </Stack>
   );

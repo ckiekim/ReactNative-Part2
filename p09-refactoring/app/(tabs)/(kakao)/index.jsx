@@ -3,11 +3,13 @@ import { StyleSheet, SafeAreaView, SectionList, Switch, Text, View, TouchableOpa
 import AntDesign from '@expo/vector-icons/AntDesign';
 import dayjs from 'dayjs';
 
-import BookmarkButton from '@/components/BookmarkButton';
-import BusInfo from '@/components/BusInfo';
+import BookmarkButton from '@/components/bus/BookmarkButton';
+import BusInfo from '@/components/bus/BusInfo';
 import Margin from '@/components/Margin';
-import { busStop, getSections, getBusNumColorByType, getRemainedTimeText, getSeatStatusText } from '@/assets/data/mockBusData';
 import useTheme from '@/hooks/use-theme';
+import { 
+  busStop, getSections, getBusNumColorByType, getRemainedTimeText, getSeatStatusText 
+} from '@/assets/data/mock-bus-data';
 
 export default function KakaoBusScreen() {
   const sections = getSections(busStop.buses);

@@ -5,9 +5,9 @@ export default function RootLayout() {
     <Stack screenOptions={{ headerShown: false }}>
       <Stack.Screen 
         name="(tabs)" 
-        options={{ 
-          initialRouteName: "(home)" 
-        }}
+        // options={{ 
+        //   initialRouteName: "(home)" 
+        // }}
       />
     </Stack>
   );

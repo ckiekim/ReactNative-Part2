@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import LottieView from 'lottie-react-native';
 import * as SplashScreen from 'expo-splash-screen';
 import { useFonts } from 'expo-font';
 
-import LoadingView from '@/components/LoadingView';
-import LangButton from '@/components/LangButton';
+import LoadingView from '@/components/translation/LoadingView';
+import LangButton from '@/components/translation/LangButton';
 import useCookieKey from '@/hooks/use-cookieKey';
 import useTransition from '@/hooks/use-translation';
-import { SafeAreaView } from 'react-native-safe-area-context';
+// import { SafeAreaView } from 'react-native-safe-area-context';
 
 // Keep the splash screen visible while we fetch resources
-SplashScreen.preventAutoHideAsync();
+// SplashScreen.preventAutoHideAsync();
 
 export default function HomeScreen() {
   const { t, locale, setLocale, format } = useTransition();
@@ -31,10 +31,10 @@ export default function HomeScreen() {
     if (cookieKey !== '')
       setIsLoaded(true);
   }, [cookieKey]);
-  useEffect(() => {
-    if (locale !== null)    // && fontsLoaded)
-      SplashScreen.hideAsync();
-  }, [locale]);    // , fontsLoaded]);
+  // useEffect(() => {
+  //   if (locale !== null)    // && fontsLoaded)
+  //     SplashScreen.hideAsync();
+  // }, [locale]);   // , fontsLoaded]);
 
   if (!isLoaded)
     return <LoadingView />

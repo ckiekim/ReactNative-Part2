@@ -9,7 +9,7 @@ export default function LoadingView() {
         // ref={ref}
         style={{ width: 200, height: 200, }}
         // Find more Lottie files at https://lottiefiles.com/featured
-        source={require('../assets/images/loading.json')}
+        source={require('@/assets/images/loading.json')}
       />
     </View>
   )

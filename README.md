@@ -5,7 +5,7 @@ React Native Exercise Part 2 (2024.08)
 
 ### Proj.8 - 통합
 - styled-components: npm install styled-components
-- Localization: npm install i18n-js, expo-localization
+- Localization: npm install i18n-js expo-localization
 - react-native async storage: npm install @react-native-async-storage/async-storage
 - SplashScreen: npx expo install expo-splash-screen
 - Lottie: npx expo install lottie-react-native
@@ -13,6 +13,6 @@ React Native Exercise Part 2 (2024.08)
 - expo fonts: npx expo install expo-font (리디바탕체도 설치)
 - Modal DateTimePicker: npm install react-native-modal-datetime-picker
 - Expo ImagePicker: npx expo install expo-image-picker
-- design iPhones: npm install react-native-iphone-screen-helper
+- design iPhones: npm install react-native-iphone-x-helper
 
 ### Proj.9 - Refactoring

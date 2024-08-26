@@ -1,6 +1,7 @@
 import { Link, Stack } from 'expo-router';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 import AntDesign from '@expo/vector-icons/AntDesign';
+import Spacer from '@/components/Spacer';
 
 export default function MiscLayout() {
   return (
@@ -12,9 +13,15 @@ export default function MiscLayout() {
         options={{ 
           title: 'Todo List App', 
           headerRight: () => (
-            <Link href="/gallery">
-              <AntDesign name="picture" size={18} />
-            </Link>
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              <Link href="/gallery">
+                <AntDesign name="picture" size={18} />
+              </Link>
+              <Spacer isHorizontal space={10} />
+              <Link href="/lotto">
+                <AntDesign name="clockcircleo" size={16} />
+              </Link>
+            </View>
           ),
         }} 
       />
@@ -23,6 +30,14 @@ export default function MiscLayout() {
         options={{ 
           headerTitle: () => (
             <Text style={{ fontSize: 20, fontWeight: 500, marginLeft: -20 }}>Gallery App</Text>
+          ),
+        }} 
+      />
+      <Stack.Screen 
+        name="lotto" 
+        options={{ 
+          headerTitle: () => (
+            <Text style={{ fontSize: 20, fontWeight: 500, marginLeft: -20 }}>Lotto App</Text>
           ),
         }} 
       />

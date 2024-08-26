@@ -16,3 +16,9 @@ React Native Exercise Part 2 (2024.08)
 - design iPhones: npm install react-native-iphone-x-helper
 
 ### Proj.9 - Refactoring
+- Proj.1 ~ Proj.6 통합 버전 Refactoring
+- Lotto 추가
+- Web 페이지 스크랩
+  - Web view: npm install react-native-webview
+  - Open graph kit: npm install react-native-opengraph-kit
+

@@ -23,7 +23,7 @@ export default function MiscLayout() {
                 <AntDesign name="clockcircleo" size={16} />
               </Link>
               <Spacer isHorizontal space={12} />
-              <Link href="/web">
+              <Link href="/webpage">
               <MaterialIcons name="web" size={20} />
               </Link>
             </View>
@@ -47,10 +47,11 @@ export default function MiscLayout() {
         }} 
       />
       <Stack.Screen 
-        name="web" 
+        name="webpage" 
+
         options={{ 
           headerTitle: () => (
-            <Text style={{ fontSize: 20, fontWeight: 500, marginLeft: -20 }}>Web Scrap App</Text>
+            <Text style={{ fontSize: 20, fontWeight: 500, marginLeft: -20 }}>Webpage Scrap App</Text>
           ),
         }} 
       />

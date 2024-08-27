@@ -21,4 +21,5 @@ React Native Exercise Part 2 (2024.08)
 - Web 페이지 스크랩
   - Web view: npm install react-native-webview
   - Open graph kit: npm install react-native-opengraph-kit
-
+  - RN Safe area context: npm install react-native-safe-area-context
+  - React Navigation: npm install @react-navigation/native @react-navigation/stack

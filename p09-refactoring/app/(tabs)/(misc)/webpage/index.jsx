@@ -3,21 +3,24 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Link } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
-import Badge from '@/components/Badge';
 import Button from '@/components/Button';
 import Spacer from '@/components/Spacer';
+import useWebpage from '@/hooks/use-webpage';
 import { webpageSection } from '@/assets/data/mock-webpage-scrap';
 import { COLOR } from '@/constants/bus-color';
 const weekNames = '일월화수목금토'.split('');
 
 export default function WebpageScreen() {
+  const {
+    sectionData
+  } = useWebpage();
   const safeAreaInset = useSafeAreaInsets();    // {"bottom": 0, "left": 0, "right": 0, "top": 25}
 
-  const ListHeaderComponent = () => (
-    <View style={styles.headerContainer}>
-      <Text style={{ padding: 20, fontSize: 16, color: COLOR.WHITE }}>List Header</Text>
-    </View>
-  );
+  // const ListHeaderComponent = () => (
+  //   <View style={styles.headerContainer}>
+  //     <Text style={{ padding: 20, fontSize: 16, color: COLOR.WHITE }}>List Header</Text>
+  //   </View>
+  // );
   const renderSectionHeader = ({ section: { title } }) => {
     const weekday = new Date(title).getDay();
     return (
@@ -40,15 +43,12 @@ export default function WebpageScreen() {
   const ListFooterComponent = () => (
     <Spacer space={20} />
   );
-  const onPressAddButton = () => {
-  }
 
   return (
     <View style={styles.container}>
       <SectionList
-        sections={webpageSection}
+        sections={sectionData}
         style={{ flex: 1, width: '100%' }}
-        // ListHeaderComponent={ListHeaderComponent}
         renderSectionHeader={renderSectionHeader}
         renderItem={renderItem}
         ItemSeparatorComponent={ItemSeparatorComponent}

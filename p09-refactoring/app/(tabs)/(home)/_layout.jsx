@@ -1,3 +1,5 @@
+// app/(tabs)/(home)/_layout.jsx
+
 import { Stack } from 'expo-router';
 
 export default function HomeLayout() {

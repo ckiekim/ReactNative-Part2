@@ -1,5 +1,6 @@
 import { Image, Pressable, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { Keyboard, StyleSheet, useWindowDimensions } from 'react-native';
+import { useRouter } from 'expo-router';
 
 import useWebpage from '@/hooks/use-webpage';
 import LoadingView from '@/components/translation/LoadingView';
@@ -7,9 +8,11 @@ import Spacer from '@/components/Spacer';
 import { COLOR } from '@/constants/bus-color';
 
 export default function WebpageAddScreen() {
+  const router = useRouter();
+  // console.log('WebpageAddScreen() Current path:', router.pathname);
   const {
     linkText, isLoading, metaData,
-    setLinkText, addLink, saveLink,
+    setLinkText, addLink, saveLink, gotoHome,
   } = useWebpage();
   const { width: windowWidth } = useWindowDimensions();
 
@@ -52,15 +55,23 @@ export default function WebpageAddScreen() {
                 </View>
               </View>
               <Spacer space={12} />
-              <TouchableOpacity 
-                style={styles.buttonContainer}
-                onPress={saveLink}
-              >
-                <Text style={{ color: 'white', paddingHorizontal: 24, paddingVertical: 8 }}>확인</Text>
-              </TouchableOpacity>
+              <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+                <TouchableOpacity 
+                  style={styles.buttonContainer}
+                  onPress={saveLink}
+                >
+                  <Text style={{ color: 'white', paddingHorizontal: 24, paddingVertical: 8 }}>확인</Text>
+                </TouchableOpacity>
+                <Spacer isHorizontal space={8} />
+                <TouchableOpacity 
+                  style={styles.cancelContainer}
+                  onPress={gotoHome}
+                >
+                  <Text style={{ color: 'grey', paddingHorizontal: 24, paddingVertical: 8 }}>취소</Text>
+                </TouchableOpacity>
+              </View>
             </>
           )
-
         }
       </Pressable>
     </View>
@@ -82,5 +93,9 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     justifyContent: 'center', alignItems: 'center', backgroundColor: COLOR.BLACK
+  },
+  cancelContainer: {
+    justifyContent: 'center', alignItems: 'center', backgroundColor: COLOR.WHITE, 
+    borderColor: COLOR.GRAY_3, borderWidth: 0.5,
   },
 });

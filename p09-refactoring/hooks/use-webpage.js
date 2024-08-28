@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useNavigation } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import { getOpenGraphData } from '@/utils/open-graph-tag-utils';
@@ -8,6 +9,7 @@ import { webpageList } from '@/assets/data/mock-webpage-scrap';
 const WEBPAGE_KEY = 'webpage-key';
 
 export default function useWebpage() {
+  const navigation = useNavigation();
   const [webpageHistory, setWebpageHistory] = useState(null);
   const [sectionData, setSectionData] = useState(null);
   const [linkText, setLinkText] = useState('');
@@ -15,8 +17,8 @@ export default function useWebpage() {
   const [metaData, setMetaData] = useState(null);
 
   const initData = async () => {
-    const result = await AsyncStorage(WEBPAGE_KEY);
-    console.log('result:', result);
+    const result = await AsyncStorage.getItem(WEBPAGE_KEY);
+    // console.log('initData result:', result);
     if (result !== null)
       setWebpageHistory(JSON.parse(result));
     else
@@ -29,6 +31,7 @@ export default function useWebpage() {
   useEffect(() => {
     if (webpageHistory !== null) {
       const result = getSectionData(webpageHistory);
+      console.log('sectionData:', result);
       setSectionData(result);
     }
   }, [webpageHistory]);
@@ -41,16 +44,28 @@ export default function useWebpage() {
     setIsLoading(false);
     setLinkText('');
   }
-
-  const saveLink = () => {
-    const newPage = { title: metaData.title, url: linkText, createdAt: new Date().toISOString() };
+  
+  const saveLink = async () => {
+    const newPage = { title: metaData?.site_name || metaData.title, url: metaData.url, createdAt: new Date().toISOString() };
     const newHistory = [...webpageHistory, newPage];
-    AsyncStorage.setItem(WEBPAGE_KEY, JSON.stringify(newHistory));
+    const _dump = await AsyncStorage.setItem(WEBPAGE_KEY, JSON.stringify(newHistory));
     setWebpageHistory(newHistory);
+    setMetaData(null);
+    console.log('before navigate');
+    navigation.navigate('index', );
+  }
+  const gotoHome = () => {
+    setMetaData(null);
+    navigation.goBack();
+  }
+
+  const initLink = async () => {
+    const _dump = await AsyncStorage.setItem(WEBPAGE_KEY, JSON.stringify(webpageList));
+    setWebpageHistory(webpageList);
   }
 
   return {
     linkText, isLoading, metaData, sectionData,
-    setLinkText, addLink, saveLink,
+    setLinkText, addLink, saveLink, gotoHome, initLink,
   }
 }

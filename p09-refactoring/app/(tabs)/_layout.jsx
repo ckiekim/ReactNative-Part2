@@ -1,14 +1,9 @@
-import { useEffect } from 'react';
-import { Tabs, useRouter } from 'expo-router';
+// app/(tabs)/_layout.jsx
+
+import { Tabs } from 'expo-router';
 import TabBarIcon from '@/components/navigation/TabBarIcon';
 
 export default function TabLayout() {
-  // const router = useRouter();
-
-  // useEffect(() => {
-  //   router.replace('/(home)');
-  // }, []);
-
   return (
     <Tabs
       initialRouteName="(home)"

@@ -14,7 +14,7 @@ export function getSectionData(webpageList) {
     if (keys.filter(k => k === key).length === 0)
       keys.push(key);
   });
-
+  
   const sorted_keys = keys.sort().reverse();
   const sectionData = [];
   sorted_keys.forEach(key => {

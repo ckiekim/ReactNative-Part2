@@ -1,3 +1,5 @@
+// app/(tabs)/(misc)/_layout.jsx
+
 import { Link, Stack } from 'expo-router';
 import { Text, View } from 'react-native';
 import AntDesign from '@expo/vector-icons/AntDesign';
@@ -23,8 +25,8 @@ export default function MiscLayout() {
                 <AntDesign name="clockcircleo" size={16} />
               </Link>
               <Spacer isHorizontal space={12} />
-              <Link href="/webpage">
-              <MaterialIcons name="web" size={20} />
+              <Link href="(webpage)">
+                <MaterialIcons name="web" size={20} />
               </Link>
             </View>
           ),
@@ -47,8 +49,7 @@ export default function MiscLayout() {
         }} 
       />
       <Stack.Screen 
-        name="webpage" 
-
+        name="(webpage)" 
         options={{ 
           headerTitle: () => (
             <Text style={{ fontSize: 20, fontWeight: 500, marginLeft: -20 }}>Webpage Scrap App</Text>

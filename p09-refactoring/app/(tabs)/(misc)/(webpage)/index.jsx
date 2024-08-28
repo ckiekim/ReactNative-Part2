@@ -1,6 +1,6 @@
-import { SectionList, StyleSheet, Text, View } from 'react-native';
+import { SectionList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Link } from 'expo-router';
+import { Link, useRouter } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 import Button from '@/components/Button';
@@ -11,8 +11,11 @@ import { COLOR } from '@/constants/bus-color';
 const weekNames = '일월화수목금토'.split('');
 
 export default function WebpageScreen() {
+  const router = useRouter();
+  // console.log('WebpageScreen() Current path:', router.pathname);
+  
   const {
-    sectionData
+    sectionData, initLink,
   } = useWebpage();
   const safeAreaInset = useSafeAreaInsets();    // {"bottom": 0, "left": 0, "right": 0, "top": 25}
 
@@ -46,17 +49,25 @@ export default function WebpageScreen() {
 
   return (
     <View style={styles.container}>
-      <SectionList
-        sections={sectionData}
-        style={{ flex: 1, width: '100%' }}
-        renderSectionHeader={renderSectionHeader}
-        renderItem={renderItem}
-        ItemSeparatorComponent={ItemSeparatorComponent}
-        ListFooterComponent={ListFooterComponent}
-      />
-
-      <View style={{ position:'absolute', right:24, bottom:24 + safeAreaInset.bottom }}>
-        <Link href="/webpage/add" asChild>
+      {sectionData &&
+        <SectionList
+          sections={sectionData}
+          style={{ flex: 1, width: '100%' }}
+          renderSectionHeader={renderSectionHeader}
+          renderItem={renderItem}
+          ItemSeparatorComponent={ItemSeparatorComponent}
+          ListFooterComponent={ListFooterComponent}
+        />
+      }
+      <View style={{ position: 'absolute', right: 24, bottom: 24 + safeAreaInset.bottom, 
+          flexDirection: 'row', alignItems: 'center' }}>
+        <TouchableOpacity onPress={initLink}>
+          <View style={styles.deleteButton}>
+          <Ionicons name="trash-outline" size={24} color="grey" />
+          </View>
+        </TouchableOpacity>
+        <Spacer isHorizontal space={12} />
+        <Link href="add" asChild>
           <Button>
             <View style={styles.addButton}>
               <Ionicons name="add" size={32} color="white" />
@@ -81,5 +92,9 @@ const styles = StyleSheet.create({
   },
   addButton: {
     width:52, height:52, borderRadius:26, alignItems:'center', justifyContent:'center', backgroundColor:'black'
+  },
+  deleteButton: {
+    width: 44, height: 44, borderRadius: 22, justifyContent: 'center', alignItems:'center',
+    borderColor: 'grey', borderWidth: 0.6, borderStyle: 'dashed'
   }
 });

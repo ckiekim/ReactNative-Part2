@@ -1,8 +1,7 @@
-import { Link, Stack } from 'expo-router';
-import { Text, View } from 'react-native';
-import AntDesign from '@expo/vector-icons/AntDesign';
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
-import Spacer from '@/components/Spacer';
+// app/(tabs)/(misc)/webpage/_layout.jsx
+
+import { Stack } from 'expo-router';
+import { Text } from 'react-native';
 
 export default function WebpageLayout() {
   return (

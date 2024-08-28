@@ -8,7 +8,6 @@ export default function WebpageLayout() {
     <Stack 
       screenOptions={{ 
         headerStyle: { backgroundColor: 'beige', alignItems: 'center' },
-        headerShown: false 
       }}
     >
       <Stack.Screen 
@@ -21,7 +20,15 @@ export default function WebpageLayout() {
         name="add" 
         options={{ 
           headerTitle: () => (
-            <Text style={{ fontSize: 20, fontWeight: 500, marginLeft: -20 }}>Webpage Scrap 추가</Text>
+            <Text style={{ fontSize: 20, fontWeight: 500, marginLeft: -20 }}>Webpage 링크 추가</Text>
+          ),
+        }} 
+      />
+      <Stack.Screen 
+        name="view" 
+        options={{ 
+          headerTitle: () => (
+            <Text style={{ fontSize: 20, fontWeight: 500, marginLeft: -20 }}>Webpage 상세 조회</Text>
           ),
         }} 
       />

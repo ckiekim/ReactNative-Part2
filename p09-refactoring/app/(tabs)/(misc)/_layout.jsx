@@ -54,6 +54,7 @@ export default function MiscLayout() {
           headerTitle: () => (
             <Text style={{ fontSize: 20, fontWeight: 500, marginLeft: -20 }}>Webpage Scrap App</Text>
           ),
+          headerShown: false,
         }} 
       />
     </Stack>

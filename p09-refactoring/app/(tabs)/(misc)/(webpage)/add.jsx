@@ -1,6 +1,5 @@
 import { Image, Pressable, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { Keyboard, StyleSheet, useWindowDimensions } from 'react-native';
-import { useRouter } from 'expo-router';
 
 import useWebpage from '@/hooks/use-webpage';
 import LoadingView from '@/components/translation/LoadingView';
@@ -8,8 +7,6 @@ import Spacer from '@/components/Spacer';
 import { COLOR } from '@/constants/bus-color';
 
 export default function WebpageAddScreen() {
-  const router = useRouter();
-  // console.log('WebpageAddScreen() Current path:', router.pathname);
   const {
     linkText, isLoading, metaData,
     setLinkText, addLink, saveLink, gotoHome,
@@ -18,9 +15,6 @@ export default function WebpageAddScreen() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.headerContainer}>
-        <Text style={{ padding: 30, fontSize: 16, color: COLOR.WHITE }}>링크 추가</Text>
-      </View>
       <Pressable style={styles.inputContainer} onPress={() => {Keyboard.dismiss()}}>
         {isLoading ? <LoadingView />
         : metaData === null ? (

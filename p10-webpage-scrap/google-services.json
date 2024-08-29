@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "371355587279",
+    "project_id": "rn-exercise-1f701",
+    "storage_bucket": "rn-exercise-1f701.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:371355587279:android:4381a64227f06c1247ddba",
+        "android_client_info": {
+          "package_name": "com.ckworld.rn.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgGMD210-TUG8jwwinrf-K_qdJWBmNw8k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

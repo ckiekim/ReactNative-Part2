@@ -19,6 +19,15 @@ React Native Exercise Part 2 (2024.08)
 - Proj.1 ~ Proj.6 통합 버전 Refactoring
 - Lotto 추가
 - Web 페이지 스크랩
-  - Web view: npm install react-native-webview
+  - Web view: expo install react-native-webview (npm install -g expo-cli 설치한 후)
   - Open graph kit: npm install react-native-opengraph-kit
   - RN Safe area context: npm install react-native-safe-area-context
+
+### Proj.10 - Web 페이지 스크랩(미완성) + Firebase
+- Web view: expo install react-native-webview (npm install -g expo-cli 설치한 후)
+- Open graph kit: npm install react-native-opengraph-kit
+- RN Safe area context: npm install react-native-safe-area-context
+- npx expo install firebase
+- npx expo install expo-dev-client
+- npx expo install @react-native-firebase/app
+- npx expo install expo-build-properties

@@ -34,13 +34,13 @@ export default function useWebpage() {
 
   useEffect(() => {
     if (webpageHistory !== null) {
-      console.log('webpageHistory length:', webpageHistory.length);
+      // console.log('webpageHistory length:', webpageHistory.length);
       const result = getSectionData(webpageHistory);
-      console.log('sectionData:', result);
+      // console.log('sectionData:', result);
       setSectionData(result);
       setRefreshing(false);
     }
-  }, [webpageHistory, refreshing]);
+  }, [webpageHistory]);
 
   const addLink = async () => {
     setIsLoading(true);
@@ -54,11 +54,10 @@ export default function useWebpage() {
   const saveLink = async () => {
     const newPage = { title: metaData?.site_name || metaData.title, url: metaData.url, createdAt: new Date().toISOString() };
     const newHistory = [...webpageHistory, newPage];
-    console.log('saveLink() newHistory length:', newHistory.length);
+    // console.log('saveLink() newHistory length:', newHistory.length);
     await AsyncStorage.setItem(WEBPAGE_KEY, JSON.stringify(newHistory));
     setWebpageHistory(newHistory);
     setMetaData(null);
-    // console.log('before navigate');
     navigation.navigate('index', { option: 'add'} );
   };
 
@@ -66,20 +65,23 @@ export default function useWebpage() {
     setMetaData(null);
     navigation.goBack();
   };
-
+  
   const initLink = async () => {
     await AsyncStorage.setItem(WEBPAGE_KEY, JSON.stringify(webpageList));
     setWebpageHistory(webpageList);
   };
-
-  const onRefresh = () => {
-    console.log('onRefresh() called.')
+  
+  const onRefresh = async () => {
+    // console.log('onRefresh() called.');
     setRefreshing(true);
+    try {
+      await initData();
+    } catch(error) {
+      console.error('Error during refresh:', error);
+    } finally {
+      setRefreshing(false);
+    }
   }
-
-  useEffect(() => {
-    console.log('sectionData is changed, length:', sectionData?.length);
-  }, [sectionData]);
 
   return {
     linkText, isLoading, metaData, sectionData, refreshing,

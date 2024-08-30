@@ -23,7 +23,7 @@ React Native Exercise Part 2 (2024.08)
   - Open graph kit: npm install react-native-opengraph-kit
   - RN Safe area context: npm install react-native-safe-area-context
 
-### Proj.10 - Web 페이지 스크랩(미완성) + Firebase
+### Proj.10 - Web 페이지 스크랩(WebView 미완성) + Firebase
 - Web view: expo install react-native-webview (npm install -g expo-cli 설치한 후)
 - Open graph kit: npm install react-native-opengraph-kit
 - RN Safe area context: npm install react-native-safe-area-context

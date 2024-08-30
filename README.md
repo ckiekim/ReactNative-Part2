@@ -31,3 +31,4 @@ React Native Exercise Part 2 (2024.08)
 - npx expo install expo-dev-client
 - npx expo install @react-native-firebase/app
 - npx expo install expo-build-properties
+- 환경변수 관리: npm install dotenv
